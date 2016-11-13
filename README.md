@@ -31,6 +31,30 @@ and the displayed web page front end contains:
 - viewing is realized via SimpleITK: https://github.com/SimpleITK/SimpleITK
 
 --------------------------------------------------------
+## Getting Started
+1.) Set/modify the parameters (Email, database structure, ...) in
+```
+Utility/Constant.cs
+```
+[optional] modify CSS style sheet in
+```
+Styles/Site.css
+```
+2.) Compile the labeling framework library
+
+Windows: Install Microsoft Visual Studio, open LabelingFramework.csproj and compile
+
+Unix/OSX: Install Mono (http://www.mono-project.com/) and compile via
+```
+xbuild /p:Configuration=Release LabelingFramework.csproj
+```
+3.) Deploy to your web server
+
+Windows/Unix/OSX: Apache via mod_mono (http://www.mono-project.com/docs/web/mod_mono/)
+
+Windows: Internet Information Services (IIS; https://technet.microsoft.com/en-us/library/ee692294(v=ws.10).aspx)
+
+--------------------------------------------------------
 Please read LICENSE file for licensing details.
 
 Detailed information are available at:
