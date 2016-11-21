@@ -66,7 +66,7 @@ with default administrator (needed for successfull initial login, please change 
 
 user: admin
 
-password: 1234
+password: 123456
 
 --------------------------------------------------------
 Please read LICENSE file for licensing details.
