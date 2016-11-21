@@ -36,6 +36,10 @@ and the displayed web page front end contains:
 ```
 Utility/Constant.cs
 ```
+specify your MySQL connection (SERVERNAME, SQL_ADMIN, SQL_ADMIN_PWD) in
+```
+Web.config (line 9): <add name="MySqlConnection" connectionString="Server=SERVERNAME;Database=labelingframework;Uid=SQL_ADMIN;Pwd=SQL_ADMIN_PWD;" />
+```
 [optional] modify CSS style sheet in
 ```
 Styles/Site.css
@@ -53,6 +57,16 @@ xbuild /p:Configuration=Release LabelingFramework.csproj
 Windows/Unix/OSX: Apache via mod_mono (http://www.mono-project.com/docs/web/mod_mono/)
 
 Windows: Internet Information Services (IIS; https://technet.microsoft.com/en-us/library/ee692294(v=ws.10).aspx)
+
+4.) Import MySQL procedures and tables from
+```
+MySQL/default_database.sql
+```
+with default administrator (needed for successfull initial login, please change password after first login)
+
+user: admin
+
+password: 1234
 
 --------------------------------------------------------
 Please read LICENSE file for licensing details.
