@@ -1,0 +1,80 @@
+﻿<%-- 
+k-Space Astronauts labeling platform
+    (c) 2016 under Apache 2.0 license 
+    Thomas Kuestner, Martin Schwartz, Philip Wolf
+    Please refer to https://sites.google.com/site/kspaceastronauts/iqa/labelingplatform for more information    
+--%>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LabelingFramework.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Scripts/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui-1.11.4.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="/Scripts/SiteMaster.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="headTime" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods ="true">
+    </asp:ScriptManager>
+    <div class="page">
+        <div class="header" id="bar">
+            <div class="title" style="color:Fuchsia;">
+                <h1>
+                    MR Image labelling framework
+                </h1>
+            </div>
+            <div class="loginDisplay" id="timeDisplay" style="float:right;padding-top:5px;color:Silver;">
+            <asp:LinkButton ID="lnklogout" ForeColor="White" runat="server" Visible="false" OnClick="lnkLogout_Click"  ToolTip="Log Out">[Log Out]</asp:LinkButton>
+                     
+            </div>
+            <div class="clear hideSkiplink" id="toolbar" style="z-index: 1000;">
+                <asp:Menu ID="NavigationMenuAmministratore" runat="server" Visible="false" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" OnMenuItemClick="btnToolbar_Click">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" ToolTip="Home" />
+                        <asp:MenuItem NavigateUrl="~/TestCase/ViewTestCase.aspx" Text="Testcases" ToolTip="Select a Testcase"/>
+                        <asp:MenuItem NavigateUrl="~/User/ViewUser.aspx" Text="Users" ToolTip="Show Users" />
+                        <asp:MenuItem Selectable="false" Text="Configuration">
+                        <asp:MenuItem NavigateUrl="~/configFramework/AddTypeUser.aspx" Text="General" ToolTip="Add User type"/>
+                        <asp:MenuItem NavigateUrl="~/configFramework/SetPath.aspx" Text="Databases" ToolTip="Set Path of Database"/>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/User/ProfileView.aspx" Text="Profile" Value="Profile" ToolTip="Show User Profiles"/>
+                    </Items>
+                </asp:Menu>
+                 <asp:Menu ID="MenuNonAmministratore" runat="server" Visible="false" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" ToolTip="Home"/>
+                        <asp:MenuItem NavigateUrl="~/User/ProfileView.aspx" Text="Profile" Value="Profile" ToolTip="Show Profile"></asp:MenuItem>
+                       
+                    </Items>
+                    
+                </asp:Menu>
+               
+            </div>
+        </div>
+        <div class="main" style="z-index:1;" id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+		
+    </div>
+	<asp:HiddenField id="logoutTime" runat="server" ClientIDMode="Static" Value="" ></asp:HiddenField>
+    <div class="footer">
+	<a href='https://sites.google.com/site/kspaceastronauts/home' target="_blank" tooltip="Homepage">k-Space Astronauts</a>
+	<a style="text-decoration: none" href="mailto:mrisimilarity@gmail.com" target="_top" tooltip="Send an Email">   &#x2709</a>
+            <!-- <asp:Label href="https://sites.google.com/site/kspaceastronauts/home" id="lblAutor" runat="server" Text="k-space Astronauts"></asp:Label> -->
+    </div>
+    </form>
+</body>
+</html>

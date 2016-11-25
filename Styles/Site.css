@@ -1,0 +1,971 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+/*graphic of the page--> still have to change */
+
+body   
+{
+    background: #dddddd;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+    overflow-x:hidden;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+    height: 20px;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+.dynamic{
+	z-index: 9999;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 500ms;
+  visibility: hidden;
+  z-index: 9999;
+}
+
+#popup2Scroll{
+	height: 400px;
+}
+#popup3Scroll{
+	height: 400px;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  width: 50%;
+  height: 250px;
+  position: relative;
+  outline-style: outset;
+  background: #c9c9c9;
+  overflow: auto;
+}
+
+.popup header2 {
+font-size: 1em;
+  margin-top: 0;
+  color: #333;
+  font-weight: 500;
+  margin: 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.popup header3 {
+  margin-top: 0;
+  color: #000000;
+  margin: 0px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.popup .close {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+#closeMessageBox{
+	cursor: pointer;
+}
+
+#message{
+    width:80%;
+    height:135px;
+    margin-top:5px;
+    border-radius:3px;
+    padding:5px;
+    resize:none;
+}
+
+.page
+{
+    width: 95%;
+    min-width: 1240px; /*960px;*/
+    background-color: #dddddd; /* b6b7bc */
+    margin: 0px auto 0px auto;
+    border: 1px solid #496077;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #4b6c9e;
+    width: 100%;
+}
+
+.header h1
+{
+    font-weight: 500;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 14px;
+}
+
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+	 background: #dddddd;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+div.hideSkiplink
+{
+    background-color:#3a4f63;
+    width:100%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 0px;
+    padding: 5px;
+    border: 0px solid #ccc;
+    width: 90%;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+
+
+/* fieldset label.inline 
+{
+    inline-block
+} */
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 100%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: left;
+    padding-right: 10px;
+}
+
+
+.info, .success, .warning, .error, .validation {
+border: 1px solid;
+margin: 10px 0px;
+padding:15px 10px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+}
+
+.info 
+{
+color: #00529B;
+background-color: #BDE5F8;
+background-image: url('info.png');
+}
+
+.success
+ {
+color: #4F8A10;
+background-color: #DFF2BF;
+background-image:url('success.png');
+}
+
+.warning 
+{
+color: #9F6000;
+background-color: #FEEFB3;
+background-image: url('warning.png');
+}
+.error 
+{
+color: #D8000C;
+background-color: #FFBABA;
+background-image: url('../managementImage/imgHelp/error_Input.png');
+}
+
+.validation {
+color: #D63301;
+background-color: #FFCCBA;
+background-image: url('../managementImage/imgHelp/error_Input.png');
+
+}
+
+﻿.divtable {
+    min-height:40px;
+    max-height:800px;
+  
+    width:60%;
+    
+}
+
+.container 
+{
+    height:40px;
+    min-width:80%;
+    width: 100%;
+    border-left:1px solid gray;
+}
+
+.contaneir-label
+{    
+    height:40px;
+    width:20%;
+    min-width:20%;
+    float:left;
+    background-color: #f5f5f5;  
+    text-align:right;
+    border-bottom:1px solid gray;
+    
+
+}
+
+.contaneir-object
+{
+    height:100%;
+    min-width:70%;
+    width:79%;
+    float:left;
+    background-color:white;
+    color:black;
+    border-left:1px solid gray;
+    border-bottom:1px solid gray;
+    border-right:1px solid gray;
+}
+
+.textBox-insert
+{
+    height:25px;
+    width:300px;
+    margin-top:5px;
+    margin-left:5px;
+    margin-bottom:5px;   
+    border: 2px solid gainsboro;
+    font-family: Arial, Helvetica, sans-serif;
+    float:left;
+}
+
+.textBox-insert:hover 
+{
+    border: 2px solid lightblue;
+}
+
+.textBox-insert:disabled 
+{
+   background-color:lightgray;
+}
+
+.label
+{
+  
+    color:#1b8ecd;
+    text-transform:capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-weight:bold;    
+    height:100%;
+    vertical-align:bottom;
+}
+
+
+.label:hover 
+{
+/*       color:lightblue;
+      width:20%;
+      height:100%;    */  
+}
+
+.button-save
+{
+	margin: 5px;
+	color:black;
+    cursor:pointer;
+    height:30px;
+    width:100px;
+    background-color:#f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:center;
+    font-size:12px;
+    font-weight:bold;
+    text-transform:capitalize;
+    color:black;
+}
+#btnProgress{
+	color:black;
+}
+#btnTutorial{
+	color:black;	
+}
+#btnTutorial[disabled]
+{
+  color: gray;     
+}
+
+#btnreset{
+	color:black;	
+}
+#btnreport{
+	color:black;	
+}
+
+
+.button-save[disabled]:hover 
+{
+	cursor:default;
+/* 	background-color:royalblue;
+    color:white; */
+}
+
+.dropdownlist
+{
+     height:25px;
+    width:300px;
+    margin-top:5px;
+    margin-left:5px;
+    margin-bottom:5px;   
+    border: 2px solid gainsboro;
+    font-family: Arial, Helvetica, sans-serif;
+    float:left;    
+    
+}
+
+
+.Package
+{
+ max-width:300px;
+ max-height:300px;
+ overflow:auto;
+ }
+ 
+ 
+ .zoom-btn {
+
+background-position: center;
+
+background-repeat: no-repeat;
+
+z-index: 99;
+
+position: absolute;
+
+width: 22px;
+
+height: 22px;
+
+border: 1px solid black;
+
+}
+
+.zoom-btn-plus {
+
+background: white url('../managementImg/imgHelp/plus.png') no-repeat center;
+
+top: 4px;
+
+left: 4px;
+
+}
+
+.zoom-btn-minus {
+
+background: white url('../managementImg/imgHelp/minus.png') no-repeat center;
+
+top: 4px;
+
+left: 30px;
+
+}
+
+.login
+{
+    vertical-align:middle;
+    background-position:center;
+        
+    
+}
+input[type=radio] {
+    display: block;
+    margin: 2px;
+}
+label {
+    display: inline-block;
+	margin-left: -3px;
+	margin-right: 15px;
+}
+table {
+    width: 100%;
+}
+
+.scaleContinuous{
+	background: rgba(0,0,0,0);
+	text-align: left;
+	margin: 3px;
+}
+
+/*  .ui-icon { zoom: 125%;
+			-moz-transform: scale(1.5); 
+			-webkit-zoom: 1.25; 
+			-ms-zoom: 1.25; 
+} */
+
+
+.slider{
+	border:1px solid #ffff00;
+	border-radius: 8px;
+	padding: 5px;
+	padding-bottom: 0px;
+}
+
+
+ .slider > span {
+    width:90%; 
+    display: block;
+    margin-left: 3px ;
+    margin-right: auto ;
+	margin-top: 4px;
+	margin-bottom: -11px;
+    cursor:pointer;
+ }
+  
+ .imgReference {
+    width: 15px;
+    height:15px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    position:absolute;
+	z-index: 99;
+}
+ .imgReferenceWorst {
+	cursor:pointer;
+	position:relative; 
+	outline:1px solid #ff0000;
+    width: 60px;
+    height:60px;
+	z-index: 99;
+}
+ .imgReferenceBest {
+	cursor:pointer;
+	position:relative; 
+	outline:1px solid #44FA2F;
+    width: 60px;
+    height:60px;
+	z-index: 99;
+}
+
+ .imgReferenceBest:hover {
+	-webkit-transform: scale(10); 
+    -moz-transform: scale(10);
+    -o-transform: scale(10);
+    -ms-transform: scale(10);
+    height:auto;
+    position:absolute;   
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+	z-index: 999;
+}
+
+ .imgReferenceWorst:hover {
+	 -webkit-transform: scale(10); 
+    -moz-transform: scale(10);
+    -o-transform: scale(10);
+    -ms-transform: scale(10);
+    height:auto;
+    position:absolute;   
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+	z-index: 999;
+}
+ 
+.transition {
+    -webkit-transform: scale(10); 
+    -moz-transform: scale(10);
+    -o-transform: scale(10);
+    -ms-transform: scale(10);
+    height:auto;
+    position:absolute;   
+}
+
+.imgPanel {
+    width:50%; 
+    float:left;
+    overflow: auto;
+}
+
+.ForwardBackwardButton {
+    width: 100%;
+    margin-left: auto ;
+    margin-right: auto ;
+    cursor:pointer;
+}
+
+/* #btnForward
+{
+    position: fixed;
+    bottom: 0px;
+    right: 50%; 
+} */
+
+
+
+.gvItemCenter  
+{
+    text-align: center; 
+    width: 20px;
+}
+
+#idWrapperContainer
+{
+    margin: 0 auto;
+    width:100%;
+    /* height:350px; */
+	overflow-x:hidden;
+/* 	display: flex; */
+
+}
+.image
+{
+    position:relative;
+    left:50%;
+    top:50%;
+}
+.Display
+{
+	position: relative;
+	background:rgb(0,0,0);
+	margin: 10px;
+    overflow-y: hidden;
+    overflow-x: hidden; 
+	display: inline-block;
+	cursor: crosshair;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -user-select: none;
+}
+/* .Display:hover{
+	
+	outline: 4px;
+	outline-color: yellow;
+	outline-style: dotted;
+} */
+.ImageContainer
+{
+	position: relative;
+    margin: 0 auto;
+    height: 300px;
+    width: 100%;
+    background: #b6b7bc; 
+    overflow-y:auto;
+    overflow-x:hidden; 
+	display: inline;
+}
+
+/* #idImageContainer
+{
+    margin: 0 auto;
+    height: 550px;
+    width: 100%;
+     background: #b6b7bc; 
+    overflow-y:auto;
+    overflow-x:hidden; 
+	display: inline;
+}
+
+#idImageContainerLeft
+{
+    margin: 0 auto;
+    width: 33%;
+    background: rgb(0,0,0);
+    float:left;
+}
+
+#idImageContainerRight
+{
+    margin: 0 auto;
+    width: 33%;
+    background: rgb(0,0,0);
+    float:right;
+}   */
+
+.expandScaleButton {
+	display: inline;
+	position: absolute;
+	top: -16px;
+    left: 8px;
+    font-size: 40px;
+	height: 10px;
+    font-weight: 300;
+    font-family: Monospace;
+    color: rgba(255,255,0,0.5);
+    opacity: 1;
+    z-index: 3;
+	cursor:pointer;
+}
+
+.expandScaleButton:hover {
+    color: rgba(255,255,0,1);
+}
+
+.customButton {
+	cursor: pointer;
+	padding: 15px 0px;
+	border: none;
+	display: inline-block;
+	margin: 4px 2px;
+/* 	width: 35px;
+	height: 35px; */
+}
+
+.customButton:hover:enabled {
+	cursor:pointer;
+	-webkit-transform: scale(1.1); 
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+}
+
+.customButton:hover:disabled {
+	cursor:default;
+}
+
+.topright {
+	position: absolute;
+	top: -8px;
+    right: 1px;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: Monospace;
+    color: rgba(255,255,0,0.5);
+    opacity: 1;
+    z-index: 5;
+	cursor:pointer;
+}
+
+.topright:hover {
+    color: rgba(255,255,0,1);
+}
+
+
+.textIcon {
+	position: absolute;
+	top: 2px;
+    right: 8px;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: Monospace;
+    color: rgba(255,255,0,0.5);
+    opacity: 1;
+    z-index: 3;
+	cursor:pointer;
+}
+.textIcon:hover {
+    color: rgba(255,255,0,1);
+}
+.bottomleft {
+	position: absolute;
+	bottom: 0px;
+    left: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: Monospace;
+    color: rgb(255,0,0);
+    opacity: 1;
+    z-index: 3;
+}
+
+.arrow{
+	position: absolute;
+	/* bottom: 0px; */
+	vertical-align: middle;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: Monospace;
+    color: rgba(255,255,0,0.5);
+    opacity: 1;
+    z-index: 3;
+	cursor:pointer;
+}
+
+.arrow:hover {
+    color: rgba(255,255,0,1);
+}
+
+
+  
+/* 
+#img2
+{
+    position:relative;
+    left:50%;
+    top:50%;
+} */
+
+#sendButton{
+	cursor: pointer;
+	color:black;
+}
+
+
+#btnEndTestcase{
+	margin: 5px;
+	cursor: pointer;
+	color:black;
+}
+
+#idInformationContainer
+{
+	width: 74%;
+    float: left;
+	background: rgba(256,256,256,0.5);
+	border:1px solid #000000;
+	border-radius: 8px;
+    /* width: 100%; */
+    float: left;
+	color:black;
+}
+
+#idSliderContainer
+{
+	cursor:default;
+	background: rgba(256,256,256,0.5);
+	border:1px solid #000000;
+	border-radius: 8px;
+	color:black;
+    cursor: default;
+    width: 25%;
+    float: right;
+}
+
+/* TOOLTIPS 
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: lightgrey;
+    color: black;
+    text-align: center;
+    position: absolute;
+    z-index: 9999;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    border-radius: 6px;
+    padding: 5px 0;
+	
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+*/
